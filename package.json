@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Fadaka/JavaScript_Intro/issues"
   },
-  "homepage": "https://github.com/Fadaka/JavaScript_Intro#readme"
+  "homepage": "https://github.com/Fadaka/JavaScript_Intro#readme",
+  "dependencies": {
+    "jest": "^27.4.7"
+  }
 }

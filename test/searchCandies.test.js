@@ -1,4 +1,5 @@
-const { number } = require("yargs");
+const add = require('../searchCandies/searchCandies')
+
 
 const candies = [
     { name: 'Aero', price: 1.99 },
@@ -15,19 +16,17 @@ const candies = [
     { name: 'Gummi bears', price: 10.99 },
     { name: 'Fraise Tagada', price: 5.99 }
   ];
-  
-  // let priceChecker = (candiesArray, amount) => {
-  //   return amount < candiesArray.price
-  // };
 
-  
+describe ('partial string returns full possible string', () => {
+    it('returns full possible string',() => {
+      expect(add(candies,2,'Ri')).toEqual([{ name: 'Ricola', price: 1.99 }]);
+    });
+});
+
+describe('search Engine returns possible candies', () => {
+    it('returns array of possible candies', () => {
+      expect(add(candies,2,'Ma')).toEqual([{ name: 'Mars', price: 1.49 }]);
+    })
+})
 
 
-  let searchEngine = (candiesArray, number) => {
-    let candy_price = candiesArray.filter(candy => candy.price < number)
-    return candy_price
-  }
-
-  // console.log(priceChecker(candies, 1.5))
-
-  console.log(searchEngine(candies, 1.5))
